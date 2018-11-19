@@ -30,3 +30,40 @@ function getLargestNumberAmongMixedElements(arr) {
   }
 }
 ```
+## Question-2
+
+Write a function called "getLongestWordOfMixedElements".
+
+Given an array of mixed types, "getLongestWordOfMixedElements" returns the longest string in the given array.
+
+Notes:
+* If the array is empty, it should return an empty string (""). 
+* If the array contains no strings; it should return an empty string.
+
+var output = getLongestWordOfMixedElements([3, 'word', 5, 'up', 3, 1]);
+console.log(output);
+```js
+function getLongestWordOfMixedElements(arr) {
+    var filtredArray=[];
+  for(var i=0;i<arr.length;i++){
+    if(typeof(arr[i])==='string'){
+      filtredArray.push(arr[i]);
+    }
+  }
+   
+    
+      if(filtredArray.length>0){
+        var longestWord = filtredArray[0];
+        for (i = 1; i < filtredArray.length; i++) {
+                if (filtredArray[i].length > longestWord.length) {
+                    longestWord = filtredArray[i];
+                }
+        }
+        return longestWord;
+      }
+  else{
+    return "";
+  }
+    
+}```
+
